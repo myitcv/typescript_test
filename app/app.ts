@@ -1,6 +1,7 @@
 /// <reference path="tsd.d.ts" />
 
-import * as Immutable from "immutable";
+import {Map} from "immutable";
 
-let a: Immutable.Map<string, number> = Immutable.Map<string, number>({test: 5});
-console.log(a, 5);
+let m: Map<string, number> = Map({test: 5});
+console.log(m);
+

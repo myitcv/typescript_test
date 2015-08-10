@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -ex
+
+mkdir -p tsfmt
+pushd tsfmt
+pwd
+git clone https://github.com/myitcv/typescript-formatter.git . || git fetch
+git checkout 3a8c7b1729b5acf8b415d0f02ad7170747a743f8
+npm install
+grunt setup
+npm run-script build
+popd
