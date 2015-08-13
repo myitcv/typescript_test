@@ -15,11 +15,23 @@ jspm install
 tsd install
 ```
 
-Run:
+Compile (and watch for changes):
 
 ```
-gulp
+gulp watch
+```
+
+Run `NodeJS` app:
+
+```
 node main.js
 ```
 
-`gulp watch` can be used to recompile on the fly
+Serving the browser version:
+
+```
+npm install -g http-server
+http-server -a localhost -p 9001
+```
+
+Navigate to http://localhost:9001 and see the served results of `app/browser.ts`
