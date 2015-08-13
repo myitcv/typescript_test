@@ -1,15 +1,13 @@
 System.config({
-  "baseURL": "",
-  "defaultJSExtensions": true,
-  "transpiler": "none",
-  "paths": {
+  baseURL: "",
+  defaultJSExtensions: true,
+  transpiler: "none",
+  paths: {
     "npm:*": "jspm_packages/npm/*",
     "github:*": "jspm_packages/github/*"
-  }
-});
+  },
 
-System.config({
-  "map": {
+  map: {
     "d3": "github:mbostock/d3@3.5.6",
     "immutable": "npm:immutable@3.7.4",
     "jasmine": "npm:jasmine@2.3.2",
@@ -172,4 +170,3 @@ System.config({
     }
   }
 });
-

@@ -14,8 +14,9 @@
     "gulp-print": "^1.1.0",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-typescript": "^2.8.0",
-    "jspm": "^0.16.0-beta.3",
-    "systemjs": "^0.18.6",
+    "jspm": "^0.16.0-beta.7",
+    "npm-check-updates": "^2.2.0",
+    "systemjs": "^0.18.9",
     "tsd": "^0.6.0-beta.5",
     "tslint": "^2.5.0-dev.1",
     "typescript": "^1.6.0-dev.20150806"
