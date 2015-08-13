@@ -35,4 +35,4 @@ Serving the browser version:
 http-server -a localhost -p 9001
 ```
 
-Navigate to [http://localhost:9001] and see the served results of `app/browser.ts`
+Navigate to [http://localhost:9001](http://localhost:9001) and see the served results of `app/browser.ts`
