@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
+    "module": "system",
     "declaration": false,
     "noImplicitAny": true,
     "removeComments": false,
     "noLib": false,
     "sourceMap": true,
-    "jsx": "react"
+    "jsx": "react",
+    "rootDir": ".",
+    "outDir": "../dist/"
   }
 }
-
