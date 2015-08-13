@@ -18,7 +18,7 @@ gulp.task("watch", ["ts"], function() {
 gulp.task("default", ["ts"]);
 
 gulp.task('ts', function() {
-	return gulp.src("app/**/*.ts")
+	return gulp.src("app/**/*.{ts,tsx}")
 	.pipe(sourcemaps.init())
 	.pipe(print(function(filepath) {
 		return "ts transpiled: " + filepath;

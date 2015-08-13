@@ -7,6 +7,9 @@
   "installed": {
     "d3/d3.d.ts": {
       "commit": "338f9db37074d197764e95a487ddb865c5f2d73c"
+    },
+    "react/react.d.ts": {
+      "commit": "338f9db37074d197764e95a487ddb865c5f2d73c"
     }
   }
 }
