@@ -20,8 +20,8 @@
     "npm-check-updates": "^2.2.0",
     "systemjs": "^0.18.9",
     "tsd": "^0.6.0-beta.5",
-    "tslint": "^2.5.0-dev.1",
-    "typescript": "^1.6.0-dev.20150806"
+    "tslint": "^2.5.0-dev.5",
+    "typescript": "^1.6.0-dev.20150907"
   },
   "jspm": {
     "directories": {},
