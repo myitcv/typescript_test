@@ -17,6 +17,7 @@ before_script:
   - npm install
   - jspm install
   - tsd install
+  - which gulp
 
 script: gulp
 
