@@ -4,6 +4,8 @@ node_js:
 
 before_script:
   - npm install -g gulp
+  - env
+  - ls $HOME
   - jspm install
   - tsd install
 script: gulp
