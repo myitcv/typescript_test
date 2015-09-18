@@ -21,7 +21,7 @@
     "systemjs": "^0.18.9",
     "tsd": "^0.6.0-beta.5",
     "tslint": "^2.5.0-dev.5",
-    "typescript": "^1.6.0-dev.20150907"
+    "typescript": "^1.7.0-dev.20150918"
   },
   "jspm": {
     "directories": {},
