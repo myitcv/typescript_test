@@ -2,10 +2,17 @@ language: node_js
 node_js:
   - "0.12"
 
+cache:
+  directories:
+    - node_modules
+    - $HOME/.jspm
+
 before_script:
   - npm install -g gulp
   - env
-  - ls $HOME
   - jspm install
+  - ls $HOME
   - tsd install
 script: gulp
+
+
