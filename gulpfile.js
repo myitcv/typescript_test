@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var ts = require("gulp-typescript");
 var shell = require("gulp-shell");
 
 gulp.task("default", ["ts"]);
