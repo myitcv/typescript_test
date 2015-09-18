@@ -8,11 +8,8 @@ cache:
     - $HOME/.jspm
 
 before_script:
-  - npm install -g gulp
-  - env
-  - jspm install
-  - ls $HOME
-  - tsd install
+  - npm install
+
 script: gulp
 
 
