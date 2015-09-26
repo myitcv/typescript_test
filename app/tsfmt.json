@@ -1,14 +1,14 @@
 {
-  "indentSize": 1,
-  "tabSize": 1,
-  "newLineCharacter": "\n",
   "convertTabsToSpaces": false,
+  "indentSize": 1,
   "insertSpaceAfterCommaDelimiter": true,
+  "insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "insertSpaceAfterKeywordsInControlFlowStatements": true,
+  "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
   "insertSpaceAfterSemicolonInForStatements": true,
   "insertSpaceBeforeAndAfterBinaryOperators": true,
-  "insertSpaceAfterKeywordsInControlFlowStatements": true,
-  "insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-  "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+  "newLineCharacter": "\n",
+  "placeOpenBraceOnNewLineForControlBlocks": false,
   "placeOpenBraceOnNewLineForFunctions": false,
-  "placeOpenBraceOnNewLineForControlBlocks": false
+  "tabSize": 1
 }
