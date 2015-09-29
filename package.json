@@ -8,19 +8,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-print": "^1.2.0",
-    "gulp-shell": "^0.4.3",
-    "http-server": "^0.8.0",
-    "jspm": "^0.16.2",
-    "npm-check-updates": "^2.2.3",
-    "systemjs": "^0.18.17",
-    "tsd": "^0.6.4",
-    "tslint": "^2.5.0",
-    "typescript": "^1.7.0-dev.20150918"
+    "gulp": "3.9.0",
+    "gulp-print": "2.0.1",
+    "gulp-shell": "0.4.3",
+    "http-server": "0.8.5",
+    "jspm": "0.16.11",
+    "npm-check-updates": "2.2.4",
+    "systemjs": "0.19.3",
+    "tsd": "0.6.4",
+    "tslint": "2.6.0-dev.1",
+    "typescript": "1.7.0-dev.20150929"
   },
   "jspm": {
-    "directories": {},
     "dependencies": {
       "d3": "github:mbostock/d3@^3.5.6",
       "immutable": "npm:immutable@^3.7.4",
