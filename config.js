@@ -9,7 +9,7 @@ System.config({
 
   map: {
     "d3": "github:mbostock/d3@3.5.6",
-    "immutable": "npm:immutable@3.7.5",
+    "immutable": "npm:immutable@3.7.4",
     "jasmine": "npm:jasmine@2.3.2",
     "react": "npm:react@0.13.3",
     "github:jspm/nodelibs-assert@0.1.0": {
