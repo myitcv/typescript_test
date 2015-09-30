@@ -34,7 +34,8 @@ node main.js
 Serving the browser version:
 
 ```
-http-server -a localhost -p 9001
+# use cache of -1 to always reload files
+http-server -c-1 -a localhost -p 9001
 ```
 
 Navigate to [http://localhost:9001](http://localhost:9001) and see the served results of `app/browser.ts`
