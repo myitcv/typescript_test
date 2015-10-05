@@ -16,8 +16,8 @@
     "npm-check-updates": "2.2.4",
     "systemjs": "0.19.3",
     "tsd": "0.6.4",
-    "tslint": "2.6.0-dev.1",
-    "typescript": "1.7.0-dev.20150929",
+    "tslint": "2.6.0-dev.2",
+    "typescript": "1.7.0-dev.20151005",
     "typescript-formatter": "1.0.0"
   },
   "jspm": {
