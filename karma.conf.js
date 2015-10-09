@@ -8,8 +8,7 @@ module.exports = function(config) {
 		browsers: ['Chrome'],
 		jspm: {
 			loadFiles: [
-				// 'dist/**/*.spec.js'
-				'dist/app.spec.js'
+				'dist/**/*.spec.js'
 			],
 			serveFiles: ['app/**/*.ts', 'dist/**/*.js', 'dist/**/*.map']
 		},
