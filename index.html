@@ -3,7 +3,11 @@
 <script src="jspm_packages/system.js"> </script>
 <script src="config.js"> </script>
 <script>
-System.import('dist/browser.js');
+System.import('./dist/browser.js').then(function(m) {
+	m.Run();
+}, function(e) {
+	console.log("Unable to load browser app", e);
+});
 </script>
 <body>
 </body>
