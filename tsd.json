@@ -6,13 +6,16 @@
   "bundle": "app/tsd.d.ts",
   "installed": {
     "d3/d3.d.ts": {
-      "commit": "338f9db37074d197764e95a487ddb865c5f2d73c"
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
     },
     "react/react.d.ts": {
-      "commit": "338f9db37074d197764e95a487ddb865c5f2d73c"
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
     },
     "es6-collections/es6-collections.d.ts": {
-      "commit": "3b7f250dcf631f1c3c545e28d9ff25920c60b5f7"
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "jasmine/jasmine.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
     }
   }
 }
