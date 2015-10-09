@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "0.12"
+  - "4.1"
 
 cache:
   directories:
@@ -8,6 +8,10 @@ cache:
     - $HOME/.jspm
 
 before_script:
+  - export PATH=$PWD/node_modules/.bin:$PATH
+  - ls node_modules/.bin
+  - env
+  - npm --version
   - jspm config registries.github.timeouts.lookup 60
   - jspm config registries.github.timeouts.build 120
   - jspm config registries.github.remote https://github.jspm.io
@@ -16,8 +20,8 @@ before_script:
   - jspm config registries.github.handler jspm-github
   - npm install
   - jspm install
-  - tsd install
-  - which gulp
+  - tsd install --overwrite
 
-script: gulp
+script:
+  - ./build.sh
 
