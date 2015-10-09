@@ -10,12 +10,12 @@
   "devDependencies": {
     "gulp": "3.9.0",
     "gulp-print": "2.0.1",
-    "gulp-shell": "0.4.3",
+    "gulp-shell": "0.5.0",
     "http-server": "0.8.5",
-    "jspm": "0.16.11",
-    "npm-check-updates": "2.2.4",
-    "systemjs": "0.19.3",
-    "tsd": "0.6.4",
+    "jspm": "0.16.12",
+    "npm-check-updates": "2.3.0",
+    "systemjs": "0.19.4",
+    "tsd": "0.6.5",
     "tslint": "2.6.0-dev.2",
     "typescript": "1.7.0-dev.20151005",
     "typescript-formatter": "1.0.0"
