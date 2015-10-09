@@ -1,8 +1,8 @@
 /// <reference path="testing.d.ts" />
 
-import {Run} from "./app";
+import {Run} from "./browser";
 
-describe("App", () => {
+describe("Browser", () => {
 	it("should work", () => {
 		expect(() => Run()).not.toThrow();
 	});
