@@ -100,7 +100,7 @@
       "check-module",
       "check-function"
     ],
-    "variable-name": true,
+    "variable-name": false,
     "whitespace": [
       true,
       "check-branch",
