@@ -5,4 +5,4 @@ gulp.task("default", ["watch"]);
 
 gulp.task("watch", shell.task([
 	"tsc --watch"
-], {cwd: "app"}));
+], {cwd: "src"}));
