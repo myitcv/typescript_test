@@ -4,7 +4,7 @@
     "jsx": "react",
     "module": "system",
     "noImplicitAny": true,
-    "noLib": false,
+    "noLib": true,
     "outDir": "../dist/",
     "removeComments": false,
     "rootDir": ".",

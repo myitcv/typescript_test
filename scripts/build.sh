@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-set -ex
+set -e
 shopt -s globstar
 shopt -s extglob
 
-tsfmt --verify *(app|src)/**/*.{ts,tsx}
-tslint -c app/tslint.json app/**/*.{ts,tsx}
-pushd app > /dev/null
+pushd src > /dev/null
 tsc
 popd > /dev/null
