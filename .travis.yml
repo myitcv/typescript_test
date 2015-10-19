@@ -36,9 +36,5 @@ before_script:
   - jspm install
   - tsd install --overwrite
 
-script:
-  - ./scripts/tsfmt
-  - ./scripts/tslint
-  - ./scripts/build.sh
-  - ./scripts/test_run.sh
+script: ./scripts/tsfmt && ./scripts/tslint && ./scripts/build.sh && ./scripts/test_run.sh
 
