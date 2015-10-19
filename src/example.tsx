@@ -7,13 +7,17 @@ interface ComponentAProps<T> {
 }
 
 class ComponentADef<T> extends React.Component<ComponentAProps<T>, {}> {
+	constructor(props?: ComponentAProps<T>) {
+		super(props);
+	}
+
 	render(): JSX.Element {
 		return <span>This is a { this.props.foo }</span>;
 	}
 }
 
-export function ComponentA<T>(theType: Class<T>): Class<ComponentADef<T>> {
-	return ComponentADef as Class<ComponentADef<T>>;
+export function ComponentA<T>(theType: Class<T>): ReactComponentClass<ComponentAProps<T>> {
+	return ComponentADef as ReactComponentClass<ComponentAProps<T>>;
 }
 // **************************
 
