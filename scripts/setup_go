@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+set -o pipefail
+
+go get -u github.com/myitcv/jsonlint

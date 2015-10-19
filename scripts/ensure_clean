@@ -9,6 +9,7 @@ if [ -z "$output"  ]
 then
   echo "Git is clean"
 else
+  git diff
   >&2 echo -e "Git is not clean. The following files should have been committed:\n\n$output"
   exit 1
 fi

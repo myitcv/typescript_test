@@ -4,9 +4,9 @@ set -o pipefail
 
 cat node_modules/typescript/lib/lib.core.d.ts | \
   sed -e 's/declare var/declare const/g' \
-  > app/lib.core.d.ts
+  > src/lib.core.d.ts
 
 cat node_modules/typescript/lib/lib.dom.d.ts | \
   sed '0,/declare var URL: URL;/{/declare var URL: URL;/d;}' | \
   sed -e 's/declare var/declare const/g' \
-  > app/lib.dom.d.ts
+  > src/lib.dom.d.ts

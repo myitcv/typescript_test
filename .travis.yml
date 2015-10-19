@@ -16,8 +16,13 @@ cache:
     - node_modules
     - $HOME/.jspm
     - $HOME/.tsd-cache
+    - $HOME/gopath
 
 before_install:
+  - env
+  - go version
+  - export GOPATH=$HOME/gopath
+  - export PATH=$GOPATH/bin:$PATH
   - export CHROME_BIN=/usr/bin/google-chrome-beta
   - ls $CHROME_BIN
   - export PATH=$PWD/node_modules/.bin:$PATH
@@ -25,6 +30,7 @@ before_install:
   - npm install -g npm@3.3.8
   - npm --version
   - $CXX --version
+  - ./scripts/setup_go
 
 before_script:
   - jspm config registries.github.timeouts.lookup 60
@@ -36,5 +42,5 @@ before_script:
   - jspm install
   - tsd install --overwrite
 
-script: ./scripts/tsfmt && ./scripts/tslint && ./scripts/build.sh && ./scripts/test_run.sh
+script: ./scripts/copy_typescript_dtss && ./scripts/ensure_clean && ./scripts/ensure_jsonfmt && ./scripts/tsfmt && ./scripts/tslint && ./scripts/build.sh && ./scripts/test_run.sh
 
