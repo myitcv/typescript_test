@@ -1,14 +1,7 @@
 {
-  "version": "v4",
-  "repo": "borisyankov/DefinitelyTyped",
-  "ref": "master",
-  "path": "typings",
-  "bundle": "app/tsd.d.ts",
+  "bundle": "src/tsd.d.ts",
   "installed": {
     "d3/d3.d.ts": {
-      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
-    },
-    "react/react.d.ts": {
       "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
     },
     "es6-collections/es6-collections.d.ts": {
@@ -16,6 +9,13 @@
     },
     "jasmine/jasmine.d.ts": {
       "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
+    },
+    "react/react.d.ts": {
+      "commit": "3fc1377ce29dd9670975cb68615edf1b819fc4a5"
     }
-  }
+  },
+  "path": "typings",
+  "ref": "master",
+  "repo": "borisyankov/DefinitelyTyped",
+  "version": "v4"
 }
