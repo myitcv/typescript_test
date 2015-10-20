@@ -40,7 +40,7 @@ before_script:
   - jspm config registries.github.maxRepoSize 0
   - jspm config registries.github.handler jspm-github
   - jspm install
-  - tsd install --overwrite
+  - tsd install
 
 script: ./scripts/copy_typescript_dtss && ./scripts/ensure_clean && ./scripts/ensure_jsonfmt && ./scripts/tsfmt && ./scripts/tslint && ./scripts/build.sh && ./scripts/test_run.sh
 
