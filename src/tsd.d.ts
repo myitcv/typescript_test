@@ -3,6 +3,7 @@
 /// <reference path="../typings/react/react.d.ts" />
 /// <reference path="../typings/es6-collections/es6-collections.d.ts" />
 /// <reference path="../typings/jasmine/jasmine.d.ts" />
+/// <reference path="../typings/react/react-dom.d.ts" />
 interface Class<T> {
 	new (): T;
 }

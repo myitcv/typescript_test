@@ -13,17 +13,18 @@
     "karma-jasmine": "0.3.6",
     "karma-jspm": "2.0.2",
     "karma-source-map-support": "1.1.0",
-    "systemjs": "0.19.5",
+    "systemjs": "0.19.6",
     "tsd": "0.6.5",
-    "tslint": "next",
-    "typescript": "next",
+    "tslint": "3.0.0",
+    "typescript": "1.8.0-dev.20151122",
     "typescript-formatter": "1.1.0"
   },
   "jspm": {
     "dependencies": {
-      "d3": "npm:d3@3",
-      "immutable": "npm:immutable@3",
-      "react": "npm:react@0.13"
+      "d3": "npm:d3",
+      "immutable": "npm:immutable",
+      "react": "npm:react@0.14",
+      "react-dom": "npm:react-dom@0.14"
     },
     "devDependencies": {}
   },

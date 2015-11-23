@@ -2,16 +2,19 @@
   "bundle": "src/tsd.d.ts",
   "installed": {
     "d3/d3.d.ts": {
-      "commit": "001ca36ba58cef903c4c063555afb07bbc36bb58"
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
     },
     "es6-collections/es6-collections.d.ts": {
-      "commit": "001ca36ba58cef903c4c063555afb07bbc36bb58"
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
     },
     "jasmine/jasmine.d.ts": {
-      "commit": "001ca36ba58cef903c4c063555afb07bbc36bb58"
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
     },
     "react/react.d.ts": {
-      "commit": "001ca36ba58cef903c4c063555afb07bbc36bb58"
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+    },
+    "react/react-dom.d.ts": {
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
     }
   },
   "path": "typings",

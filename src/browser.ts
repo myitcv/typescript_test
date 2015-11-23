@@ -1,7 +1,8 @@
 import * as React from "react";
+import * as ReactDOM from "react-dom";
 import {BuildMyComponent} from "./example";
 
 export function Run(): void {
 	console.log("Running browser");
-	React.render(BuildMyComponent(), document.body);
+	ReactDOM.render(BuildMyComponent(), document.getElementById("main-content"));
 }
