@@ -16,7 +16,7 @@
     "systemjs": "0.19.6",
     "tsd": "0.6.5",
     "tslint": "3.0.0",
-    "typescript": "1.8.0-dev.20151122",
+    "typescript": "1.8.0-dev.20151124",
     "typescript-formatter": "1.1.0"
   },
   "jspm": {
