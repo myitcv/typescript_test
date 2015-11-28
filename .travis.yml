@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "4.2"
+  - "5.1"
 
 addons:
   apt:
@@ -20,6 +20,9 @@ cache:
 
 before_install:
   - env
+  - npm install -g npm@3.5.1
+  - node --version
+  - npm --version
   - go version
   - export GOPATH=$HOME/gopath
   - export PATH=$GOPATH/bin:$PATH
@@ -27,8 +30,6 @@ before_install:
   - ls $CHROME_BIN
   - export PATH=$PWD/node_modules/.bin:$PATH
   - export CXX=g++-4.8
-  - npm install -g npm@3.3.8
-  - npm --version
   - $CXX --version
   - ./scripts/setup_go
 
