@@ -34,6 +34,9 @@ before_install:
   - ./scripts/setup_go
 
 before_script:
+  - tsc --version
+  - tslint --version
+  - tsfmt --version
   - jspm config registries.github.timeouts.lookup 60
   - jspm config registries.github.timeouts.build 120
   - jspm config registries.github.remote https://github.jspm.io
