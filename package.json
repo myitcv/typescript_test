@@ -6,18 +6,18 @@
     "gulp-print": "2.0.1",
     "gulp-shell": "0.5.1",
     "http-server": "0.8.5",
-    "jasmine-core": "2.3.4",
-    "jspm": "0.16.15",
-    "karma": "0.13.15",
-    "karma-chrome-launcher": "0.2.1",
+    "jasmine-core": "2.4.1",
+    "jspm": "0.16.23",
+    "karma": "0.13.19",
+    "karma-chrome-launcher": "0.2.2",
     "karma-jasmine": "0.3.6",
     "karma-jspm": "2.0.2",
     "karma-source-map-support": "1.1.0",
-    "systemjs": "0.19.6",
+    "systemjs": "0.19.16",
     "tsd": "0.6.5",
-    "tslint": "3.1.0-dev.1",
-    "typescript": "1.8.0-dev.20151201",
-    "typescript-formatter": "1.1.0"
+    "tslint": "3.2.0-dev.2",
+    "typescript": "1.8.0-dev.20160116",
+    "typescript-formatter": "1.2.0"
   },
   "jspm": {
     "dependencies": {
