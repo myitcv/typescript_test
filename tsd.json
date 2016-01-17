@@ -2,23 +2,26 @@
   "bundle": "src/tsd.d.ts",
   "installed": {
     "d3/d3.d.ts": {
-      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+      "commit": "48f9a8a0bd9a9bf14c507dd9d4db159bd687c583"
     },
-    "es6-collections/es6-collections.d.ts": {
-      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+    "es6-shim/es6-shim.d.ts": {
+      "commit": "48f9a8a0bd9a9bf14c507dd9d4db159bd687c583"
     },
     "jasmine/jasmine.d.ts": {
-      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+      "commit": "48f9a8a0bd9a9bf14c507dd9d4db159bd687c583"
     },
     "react/react-dom.d.ts": {
-      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+      "commit": "48f9a8a0bd9a9bf14c507dd9d4db159bd687c583"
     },
     "react/react.d.ts": {
-      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+      "commit": "48f9a8a0bd9a9bf14c507dd9d4db159bd687c583"
+    },
+    "whatwg-fetch/whatwg-fetch.d.ts": {
+      "commit": "48f9a8a0bd9a9bf14c507dd9d4db159bd687c583"
     }
   },
   "path": "typings",
-  "ref": "master",
-  "repo": "DefinitelyTyped/DefinitelyTyped",
+  "ref": "modelogiq_patches",
+  "repo": "modelogiq/DefinitelyTyped",
   "version": "v4"
 }
