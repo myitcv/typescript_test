@@ -3,6 +3,7 @@
     "declaration": false,
     "jsx": "react",
     "module": "system",
+    "newLine": "LF",
     "noEmitOnError": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,

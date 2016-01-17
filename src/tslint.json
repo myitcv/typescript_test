@@ -1,10 +1,7 @@
 {
   "rules": {
     "align": [
-      true,
-      "parameters",
-      "arguments",
-      "statements"
+      false
     ],
     "ban": false,
     "class-name": true,
@@ -15,10 +12,6 @@
     "curly": true,
     "eofline": true,
     "forin": true,
-    "indent": [
-      true,
-      "tabs"
-    ],
     "jsdoc-format": true,
     "label-position": true,
     "label-undefined": true,
