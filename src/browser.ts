@@ -1,3 +1,4 @@
+// import "closure-library";
 import * as ReactDOM from "react-dom";
 import {BuildMyComponent} from "./example";
 

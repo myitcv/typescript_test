@@ -5,5 +5,5 @@ shopt -s globstar
 shopt -s extglob
 
 pushd src > /dev/null
-tsc
+gulp compile
 popd > /dev/null

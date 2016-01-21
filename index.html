@@ -1,15 +1,23 @@
 <!doctype html>
 <html>
-<script src="jspm_packages/system.js"> </script>
-<script src="config.js"> </script>
-<script>
-System.import('./dist/browser.js').then(function(m) {
-	m.Run(document.getElementById("main-content"));
-}, function(e) {
-	console.log("Unable to load browser app", e);
-});
-</script>
-<div id="main-content"></div>
-<body>
-</body>
+  <script src="protobuf/goog/base.js"></script>
+  <script src="protobuf/protobuf/message.js"></script>
+  <script src="protobuf/protobuf/binary/arith.js"></script>
+  <script src="protobuf/protobuf/binary/constants.js"></script>
+  <script src="protobuf/protobuf/binary/utils.js"></script>
+  <script src="protobuf/protobuf/binary/decoder.js"></script>
+  <script src="protobuf/protobuf/binary/reader.js"></script>
+  <script src="protobuf/protobuf/binary/writer.js"></script>
+  <script src="jspm_packages/system.js"> </script>
+  <script src="config.js"> </script>
+  <script>
+    System.import('./dist/browser.js').then(function(m) {
+      m.Run(document.getElementById("main-content"));
+    }, function(e) {
+      console.log("Unable to load browser app", e);
+    });
+  </script>
+  <div id="main-content"></div>
+  <body>
+  </body>
 </html>

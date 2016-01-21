@@ -14,6 +14,7 @@ addons:
 cache:
   directories:
     - node_modules
+    - protobuf
     - $HOME/.jspm
     - $HOME/.tsd-cache
     - $HOME/gopath
@@ -24,6 +25,7 @@ before_install:
   - export PATH=$GOPATH/bin:$PATH
   - export CHROME_BIN=/usr/bin/google-chrome-beta
   - export PATH=$PWD/node_modules/.bin:$PATH
+  - export PROTOC_VERSION=3.0.0-beta-2
   - env
   - npm install -g npm@3.5.3
   - node --version
@@ -45,6 +47,7 @@ before_script:
   - jspm config registries.github.handler jspm-github
   - jspm install
   - tsd install
+  - ./scripts/protobuf_install
 
 script: ./scripts/copy_typescript_dtss && ./scripts/ensure_clean && ./scripts/ensure_jsonfmt && ./scripts/tsfmt && ./scripts/tslint && ./scripts/build.sh && ./scripts/test_run.sh
 
