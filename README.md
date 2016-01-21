@@ -63,7 +63,6 @@ Then run the Go server:
 go run *.go
 ```
 
-
 Optionally regenerate the Go and JS files:
 
 ```
