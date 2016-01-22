@@ -11,6 +11,7 @@ It is generated from these files:
 It has these top-level messages:
 	HelloRequest
 	HelloReply
+	TestMessage
 */
 package main
 
@@ -22,6 +23,10 @@ import math "math"
 var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the proto package it is being compiled against.
+const _ = proto.ProtoPackageIsVersion1
 
 // The request message containing the user's name.
 type HelloRequest struct {
@@ -44,21 +49,142 @@ func (m *HelloReply) String() string            { return proto.CompactTextString
 func (*HelloReply) ProtoMessage()               {}
 func (*HelloReply) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{1} }
 
+// The request message containing oneof case.
+type TestMessage struct {
+	StringField string `protobuf:"bytes,1,opt,name=stringField" json:"stringField,omitempty"`
+	Uint64Field uint64 `protobuf:"varint,4,opt,name=uint64Field" json:"uint64Field,omitempty"`
+	// Types that are valid to be assigned to OneofField:
+	//	*TestMessage_OneofStringField
+	//	*TestMessage_OneofUint64Field
+	OneofField isTestMessage_OneofField `protobuf_oneof:"oneofField"`
+}
+
+func (m *TestMessage) Reset()                    { *m = TestMessage{} }
+func (m *TestMessage) String() string            { return proto.CompactTextString(m) }
+func (*TestMessage) ProtoMessage()               {}
+func (*TestMessage) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{2} }
+
+type isTestMessage_OneofField interface {
+	isTestMessage_OneofField()
+}
+
+type TestMessage_OneofStringField struct {
+	OneofStringField string `protobuf:"bytes,2,opt,name=oneofStringField,oneof"`
+}
+type TestMessage_OneofUint64Field struct {
+	OneofUint64Field uint64 `protobuf:"varint,3,opt,name=oneofUint64Field,oneof"`
+}
+
+func (*TestMessage_OneofStringField) isTestMessage_OneofField() {}
+func (*TestMessage_OneofUint64Field) isTestMessage_OneofField() {}
+
+func (m *TestMessage) GetOneofField() isTestMessage_OneofField {
+	if m != nil {
+		return m.OneofField
+	}
+	return nil
+}
+
+func (m *TestMessage) GetOneofStringField() string {
+	if x, ok := m.GetOneofField().(*TestMessage_OneofStringField); ok {
+		return x.OneofStringField
+	}
+	return ""
+}
+
+func (m *TestMessage) GetOneofUint64Field() uint64 {
+	if x, ok := m.GetOneofField().(*TestMessage_OneofUint64Field); ok {
+		return x.OneofUint64Field
+	}
+	return 0
+}
+
+// XXX_OneofFuncs is for the internal use of the proto package.
+func (*TestMessage) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _TestMessage_OneofMarshaler, _TestMessage_OneofUnmarshaler, _TestMessage_OneofSizer, []interface{}{
+		(*TestMessage_OneofStringField)(nil),
+		(*TestMessage_OneofUint64Field)(nil),
+	}
+}
+
+func _TestMessage_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*TestMessage)
+	// oneofField
+	switch x := m.OneofField.(type) {
+	case *TestMessage_OneofStringField:
+		b.EncodeVarint(2<<3 | proto.WireBytes)
+		b.EncodeStringBytes(x.OneofStringField)
+	case *TestMessage_OneofUint64Field:
+		b.EncodeVarint(3<<3 | proto.WireVarint)
+		b.EncodeVarint(uint64(x.OneofUint64Field))
+	case nil:
+	default:
+		return fmt.Errorf("TestMessage.OneofField has unexpected type %T", x)
+	}
+	return nil
+}
+
+func _TestMessage_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*TestMessage)
+	switch tag {
+	case 2: // oneofField.oneofStringField
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeStringBytes()
+		m.OneofField = &TestMessage_OneofStringField{x}
+		return true, err
+	case 3: // oneofField.oneofUint64Field
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.OneofField = &TestMessage_OneofUint64Field{x}
+		return true, err
+	default:
+		return false, nil
+	}
+}
+
+func _TestMessage_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*TestMessage)
+	// oneofField
+	switch x := m.OneofField.(type) {
+	case *TestMessage_OneofStringField:
+		n += proto.SizeVarint(2<<3 | proto.WireBytes)
+		n += proto.SizeVarint(uint64(len(x.OneofStringField)))
+		n += len(x.OneofStringField)
+	case *TestMessage_OneofUint64Field:
+		n += proto.SizeVarint(3<<3 | proto.WireVarint)
+		n += proto.SizeVarint(uint64(x.OneofUint64Field))
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	return n
+}
+
 func init() {
 	proto.RegisterType((*HelloRequest)(nil), "helloworld.HelloRequest")
 	proto.RegisterType((*HelloReply)(nil), "helloworld.HelloReply")
+	proto.RegisterType((*TestMessage)(nil), "helloworld.TestMessage")
 }
 
 var fileDescriptor0 = []byte{
-	// 155 bytes of a gzipped FileDescriptorProto
+	// 240 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0xc8, 0x48, 0xcd, 0xc9,
 	0xc9, 0x2f, 0xcf, 0x2f, 0xca, 0x49, 0xd1, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2, 0x42, 0x88,
 	0x28, 0x99, 0x70, 0xf1, 0x78, 0x80, 0x78, 0x41, 0xa9, 0x85, 0xa5, 0xa9, 0xc5, 0x25, 0x42, 0x42,
 	0x5c, 0x2c, 0x79, 0x89, 0xb9, 0xa9, 0x12, 0x8c, 0x0a, 0x8c, 0x1a, 0x9c, 0x41, 0x60, 0xb6, 0x90,
 	0x00, 0x17, 0x73, 0x62, 0x7a, 0xaa, 0x04, 0x13, 0x50, 0x88, 0x25, 0x08, 0xc4, 0x54, 0x52, 0xe3,
 	0xe2, 0x82, 0xea, 0x2a, 0xc8, 0xa9, 0x14, 0x92, 0xe0, 0x62, 0xcf, 0x4d, 0x2d, 0x2e, 0x06, 0xa9,
-	0x81, 0x68, 0x83, 0x71, 0x8d, 0x3c, 0xb9, 0xd8, 0xdd, 0x8b, 0x52, 0x53, 0x4b, 0x52, 0x8b, 0x84,
-	0xec, 0xb8, 0x38, 0x82, 0x13, 0x2b, 0xc1, 0xba, 0x84, 0x24, 0xf4, 0x90, 0xdc, 0x84, 0x6c, 0xbd,
-	0x94, 0x18, 0x16, 0x19, 0xa0, 0x15, 0x4a, 0x0c, 0x49, 0x6c, 0x60, 0xb7, 0x1b, 0x03, 0x02, 0x00,
-	0x00, 0xff, 0xff, 0xa7, 0xe2, 0xe7, 0x38, 0xcf, 0x00, 0x00, 0x00,
+	0x81, 0x68, 0x83, 0x71, 0x95, 0x76, 0x33, 0x72, 0x71, 0x87, 0x00, 0x8d, 0xf5, 0x85, 0xf0, 0x85,
+	0x14, 0xb8, 0xb8, 0x8b, 0x4b, 0x8a, 0x32, 0xf3, 0xd2, 0xdd, 0x32, 0x53, 0x73, 0x52, 0xa0, 0xaa,
+	0x91, 0x85, 0x40, 0x2a, 0x4a, 0x33, 0xf3, 0x4a, 0xcc, 0x4c, 0x20, 0x2a, 0x58, 0xc0, 0x76, 0x22,
+	0x0b, 0x09, 0xe9, 0x70, 0x09, 0xe4, 0xe7, 0xa5, 0xe6, 0xa7, 0x05, 0x23, 0x19, 0x04, 0x72, 0x1a,
+	0xa7, 0x07, 0x43, 0x10, 0x86, 0x0c, 0x5c, 0x75, 0x28, 0x92, 0xa1, 0xcc, 0x20, 0x43, 0xe1, 0xaa,
+	0x91, 0x64, 0x9c, 0x78, 0xb8, 0xb8, 0xc0, 0x62, 0x60, 0x9e, 0x91, 0x3b, 0x17, 0xbb, 0x7b, 0x51,
+	0x6a, 0x6a, 0x49, 0x6a, 0x91, 0x90, 0x0d, 0x17, 0x47, 0x70, 0x62, 0x25, 0xd8, 0xcf, 0x42, 0x12,
+	0x7a, 0x48, 0x21, 0x8a, 0x1c, 0x78, 0x52, 0x62, 0x58, 0x64, 0x80, 0x01, 0x94, 0xc4, 0x06, 0x0e,
+	0x77, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0xb5, 0x0e, 0x92, 0xbf, 0x8b, 0x01, 0x00, 0x00,
 }
