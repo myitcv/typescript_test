@@ -41,9 +41,15 @@ service Greeter {
 message HelloRequest {
   string name = 1;
   uint64 age = 2;
+  Instant dob = 3;
 }
 
 // The response message containing the greetings
 message HelloReply {
   string message = 1;
+}
+
+message Instant {
+  int64 seconds = 1;
+  int64 microseconds = 2;
 }

@@ -1,5 +1,6 @@
 import {Uint64} from "./custom_types";
 import {helloworld} from "./helloworld";
+import {ImmDate} from "./immDate";
 
 export class HelloRequest {
 	private underlying: helloworld.HelloRequest;
@@ -41,6 +42,16 @@ export class HelloRequest {
 	Serialize(): ArrayBuffer {
 		return this.underlying.serializeBinary();
 	}
+
+	SetDob(dob: ImmDate): HelloRequest {
+		let instance = HelloRequest.fromHelloRequest(this.underlying.cloneMessage());
+		instance.underlying.setDob(ToInstant(dob));
+		return instance;
+	}
+
+	get Dob(): ImmDate {
+		return ToImmDate(this.underlying.getDob());
+	}
 }
 
 export class HelloReply {
@@ -73,4 +84,18 @@ export class HelloReply {
 	Serialize(): ArrayBuffer {
 		return this.underlying.serializeBinary();
 	}
+}
+
+export function ToInstant(d: ImmDate): helloworld.Instant {
+	let t = d.GetTime();
+	let res = new helloworld.Instant();
+	res.setSeconds(Math.floor(t / 1000));
+	res.setMicroseconds(t - Math.floor(t / 1000) * 1000);
+	return res;
+}
+
+export function ToImmDate(d: helloworld.Instant): ImmDate {
+	let res = ImmDate.NewImmDate(d.getSeconds() * 1000);
+	res = res.SetMilliseconds(d.getMicroseconds() / 1000);
+	return res;
 }
