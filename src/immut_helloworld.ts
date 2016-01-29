@@ -105,13 +105,13 @@ export class HelloReply implements MessageType {
 export type OneoffieldEnum = helloworld.OneoffieldEnum;
 
 export class TestMessage implements MessageType {
+	static OneoffieldCase = helloworld.TestMessage.OneoffieldCase;
+
 	private underlying: helloworld.TestMessage;
 
 	constructor() {
 		this.underlying = new helloworld.TestMessage();
 	}
-
-	static OneoffieldCase = helloworld.TestMessage.OneoffieldCase;
 
 	static fromTestMessage(u: helloworld.TestMessage): TestMessage {
 		let ihr = new TestMessage();

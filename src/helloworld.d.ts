@@ -18,8 +18,8 @@ export namespace helloworld {
 		cloneMessage(): HelloReply;
 	}
 	export class TestMessage {
-		static deserializeBinary(arr: Uint8Array): TestMessage;
 		static OneoffieldCase: typeof OneoffieldEnum;
+		static deserializeBinary(arr: Uint8Array): TestMessage;
 		setStringfield(s: string): void;
 		getStringfield(): string;
 		setUint64field(s: number): void;
