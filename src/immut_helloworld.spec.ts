@@ -9,6 +9,15 @@ function verifyWithSerialization<T extends MessageType>(src: T, dest: string): b
 	return base64str === dest;
 }
 
+function GetSerializedObjectFromBase64(base64: string): Uint8Array {
+	let asciiStr = atob(base64);
+	let asciiArray = asciiStr.split("");
+	let arrayBuffer = new ArrayBuffer(asciiArray.length);
+	let uint8Array = new Uint8Array(arrayBuffer);
+	uint8Array.set(asciiArray.map((c) => c.charCodeAt(0)));
+	return uint8Array;
+}
+
 describe("TestMessage", () => {
 
 	let serializedJSON: {[k: string]: string};
@@ -284,10 +293,15 @@ describe("TestMessage", () => {
 
 			describe("Serialize", () => {
 				it("should call the underlying serialize function", () => {
-					spyOn(testMessage["underlying"], "serializeBinary").and.callThrough();
-					testMessage.Serialize();
-					expect(testMessage["underlying"].serializeBinary).toHaveBeenCalled();
+					let testMessageWithString = testMessage.SetStringField("modelogiq");
+					let testMessageWithUint64 = testMessage.SetUint64Field(Uint64(9999999999));
+					let testMessageWithOneofString = testMessage.SetOneofStringField("modelogiq");
+					let testMessageWithOneofUint64 = testMessage.SetOneofUint64Field(Uint64(9999999999));
 					expect(verifyWithSerialization(testMessage, serializedJSON["emptyTestMessage"])).toBe(true);
+					expect(verifyWithSerialization(testMessageWithString, serializedJSON["testMessageWithString"])).toBe(true);
+					expect(verifyWithSerialization(testMessageWithUint64, serializedJSON["testMessageWithUint64"])).toBe(true);
+					expect(verifyWithSerialization(testMessageWithOneofString, serializedJSON["testMessageWithOneofString"])).toBe(true);
+					expect(verifyWithSerialization(testMessageWithOneofUint64, serializedJSON["testMessageWithOneofUint64"])).toBe(true);
 				});
 			});
 
@@ -296,7 +310,15 @@ describe("TestMessage", () => {
 					spyOn(helloworld.TestMessage, "deserializeBinary").and.callThrough();
 					let serializedSource = new Uint8Array((new TestMessage()).Serialize());
 					TestMessage.Deserialize(serializedSource);
-					expect(helloworld["TestMessage"].deserializeBinary).toHaveBeenCalled();
+					expect(helloworld.TestMessage.deserializeBinary).toHaveBeenCalled();
+					let testMessageWithString = GetSerializedObjectFromBase64(serializedJSON["testMessageWithString"]);
+					let testMessageWithUint64 = GetSerializedObjectFromBase64(serializedJSON["testMessageWithUint64"]);
+					let testMessageWithOneofString = GetSerializedObjectFromBase64(serializedJSON["testMessageWithOneofString"]);
+					let testMessageWithOneofUint64 = GetSerializedObjectFromBase64(serializedJSON["testMessageWithOneofUint64"]);
+					expect(TestMessage.Deserialize(testMessageWithString).StringField).toEqual("modelogiq");
+					expect(TestMessage.Deserialize(testMessageWithUint64).Uint64Field).toEqual(Uint64(9999999999));
+					expect(TestMessage.Deserialize(testMessageWithOneofString).OneofStringField).toEqual("modelogiq");
+					expect(TestMessage.Deserialize(testMessageWithOneofUint64).OneofUint64Field).toEqual(Uint64(9999999999));
 				});
 			});
 		});
