@@ -82,3 +82,22 @@ export function curry<R>(fn: Function, thisArg: Object, ...argArray: any[]): any
 	return fn.bind(thisArg, ...argArray);
 	/* tslint:enable:ensure-no-function-bind */
 }
+
+const numberTag = "[object Number]";
+const stringTag = "[object String]";
+
+function isObjectLike(value: Object): boolean {
+	return value !== undefined && typeof value === "object";
+}
+
+export function isUndefined(value: Object): boolean {
+	return value === undefined;
+}
+
+export function isNumber(value: Object): boolean {
+	return typeof value === "number" || (isObjectLike(value) && Object.prototype.toString.call(value) === numberTag);
+}
+
+export function isString(value: Object): boolean {
+	return typeof value === "string" || (isObjectLike(value) && Object.prototype.toString.call(value) === stringTag);
+}
