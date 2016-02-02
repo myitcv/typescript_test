@@ -47,3 +47,13 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
 }
+
+// The request message containing oneof case.
+message TestMessage {
+	string stringField = 1;
+	uint64 uint64Field = 4;
+	oneof oneofField {
+		string oneofStringField = 2;
+		uint64 oneofUint64Field = 3;
+	}
+}

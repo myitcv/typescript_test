@@ -21,7 +21,7 @@ module.exports = function(config) {
 			loadFiles: [
 				'dist/**/*.spec.js'
 			],
-			serveFiles: ['src/**/*.ts', 'dist/**/*.js', 'dist/**/*.map']
+			serveFiles: ['src/**/*.ts', 'dist/**/*.js', 'dist/**/*.map', 'fixtures/**/*.json', 'fixtures/**/*']
 		},
 		colors: true,
 		reporters: ['dots'],

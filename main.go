@@ -34,6 +34,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	BuildFixture()
 	http.HandleFunc("/SayHello", handler)
 	http.Handle("/", http.FileServer(http.Dir(".")))
 	http.ListenAndServe(":8080", nil)

@@ -46,6 +46,12 @@ describe("Custom Types", () => {
 			let s = int32_invalid.toString();
 			expect(() => Int32.Parse(s)).toThrow();
 		});
+
+		it("should return the same reference when number is same", () => {
+			let s = Int32(int32_valid);
+			let t = Int32(int32_valid);
+			expect(s).toBe(t);
+		});
 	});
 
 	describe("Int64", () => {
@@ -87,6 +93,12 @@ describe("Custom Types", () => {
 			let s = int64_invalid.toString();
 			expect(() => Int64.Parse(s)).toThrow();
 		});
+
+		it("should return the same reference when number is same", () => {
+			let s = Int64(int64_valid);
+			let t = Int64(int64_valid);
+			expect(s).toBe(t);
+		});
 	});
 
 	describe("Uint32", () => {
@@ -120,6 +132,13 @@ describe("Custom Types", () => {
 			let s = uint32_invalid.toString();
 			expect(() => Uint32.Parse(s)).toThrow();
 		});
+
+		it("should return the same reference when number is same", () => {
+			let s = Uint32(uint32_valid);
+			let t = Uint32(uint32_valid);
+			expect(s).toBe(t);
+		});
+
 	});
 
 	describe("Uint64", () => {
@@ -153,5 +172,12 @@ describe("Custom Types", () => {
 			let s = uint64_invalid.toString();
 			expect(() => Uint64.Parse(s)).toThrow();
 		});
+
+		it("should return the same reference when number is same", () => {
+			let s = Uint64(uint64_valid);
+			let t = Uint64(uint64_valid);
+			expect(s).toBe(t);
+		});
+
 	});
 });
