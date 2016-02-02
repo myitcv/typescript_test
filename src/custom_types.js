@@ -7,6 +7,10 @@ var custom_types = {};
 	var MAX_64_NUM = Math.pow(2, 63);
 	var MAX_U32_NUM = Math.pow(2, 32);
 	var MAX_U64_NUM = Math.pow(2, 64);
+	var Int32Cache = [];
+	var Uint32Cache = [];
+	var Int64Cache = [];
+	var Uint64Cache = [];
 
 	var Int32 = function(n) {
 		if(this instanceof Int32) {
@@ -19,8 +23,13 @@ var custom_types = {};
 			if (n >= MAX_32_NUM || n < (-MAX_32_NUM)) {
 				throw new Error("integer out of range (32bit)");
 			}
-			else {
+			if (Int32Cache[n] === undefined) {
 				this.val = n;
+				Int32Cache[n] = this;
+				return this;
+			}
+			else {
+				return Int32Cache[n];
 			}
 		} else {
 			return new Int32(n);
@@ -54,7 +63,14 @@ var custom_types = {};
 				throw new Error("integer out of range (64bit)");
 			}
 			else {
-				this.val = n;
+				if (Int64Cache[n.toString()] === undefined) {
+					this.val = n;
+					Int64Cache[n.toString()] = this;
+					return this;
+				}
+				else {
+					return Int64Cache[n.toString()];
+				}
 			}
 		} else {
 			return new Int64(n);
@@ -84,12 +100,20 @@ var custom_types = {};
 				throw new Error("integer out of range (32bit)");
 			}
 			else {
-				this.val = Math.abs(n);
+				if (Uint32Cache[n] === undefined) {
+					this.val = Math.abs(n);
+					Uint32Cache[n] = this;
+					return this;
+				}
+				else {
+					return Uint32Cache[n];
+				}
 			}
 		} else {
 			return new Uint32(n);
 		}
 	};
+
 	Uint32.Parse = function(str) {
 		try {
 			var n = parseInt(str, 10);
@@ -114,7 +138,14 @@ var custom_types = {};
 				throw new Error("integer out of range (64bit)");
 			}
 			else {
-				this.val = Math.abs(n);
+				if (Uint64Cache[n.toString()] === undefined) {
+					this.val = n;
+					Uint64Cache[n.toString()] = this;
+					return this;
+				}
+				else {
+					return Uint64Cache[n.toString()];
+				}
 			}
 		} else {
 			return new Uint64(n);
