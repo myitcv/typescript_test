@@ -89,8 +89,8 @@ export class HelloReply {
 export function ToInstant(d: ImmDate): helloworld.Instant {
 	let t = d.GetTime();
 	let res = new helloworld.Instant();
-	res.setSeconds(Math.floor(t / 1000));
-	res.setMicroseconds(t - Math.floor(t / 1000) * 1000);
+	res.setSeconds(Math.floor(t / 1000));	// Seconds
+	res.setMicroseconds((t - Math.floor(t / 1000) * 1000) * 1000);	// (t - Math.floor(t / 1000) * 1000) -- MS * 1000 -- MiS
 	return res;
 }
 

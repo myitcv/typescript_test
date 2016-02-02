@@ -5,30 +5,6 @@ import {ToInstant, ToImmDate} from "./immut_helloworld";
 describe("ImmDateToInstant ", () => {
 	let immDate: ImmDate;
 	let instant: helloworld.Instant;
-	let dateObj: number;
-	beforeEach(() => {
-		dateObj = new Date().valueOf();
-	});
-
-	it("should be able transform to Instant from ImmDate", () => {
-		immDate = ImmDate.NewImmDate(dateObj);
-		instant = ToInstant(immDate);
-		expect(instant).not.toBeUndefined();
-		let x = new Date(instant.getSeconds() * 1000);
-		x.setMilliseconds(instant.getMicroseconds() / 1000);
-		expect(x.getSeconds() === immDate.GetSeconds()).toBe(true);
-	});
-
-	it("should be able to transform to ImmDate from Instant", () => {
-		immDate = ImmDate.NewImmDate(dateObj);
-		instant = ToInstant(immDate);
-		immDate = ToImmDate(instant);
-		expect(immDate).not.toBeUndefined();
-		let x = new Date(instant.getSeconds() * 1000);
-		x.setMilliseconds(instant.getMicroseconds() / 1000);
-		expect(x.getSeconds() === immDate.GetSeconds()).toBe(true);
-		expect(x.getDate() === immDate.GetDate()).toBe(true);
-	});
 	describe("ToImmDate ", () => {
 		/*
 			Mon Feb  1 19:06:34 IST 2016
@@ -53,6 +29,16 @@ describe("ImmDateToInstant ", () => {
 });
 
 describe("Instant to ImmDate conversion ", () => {
+	it("Should be able to convert back and forth ", () => {
+		let instant = new helloworld.Instant();
+		instant.setSeconds(1454333794);
+		instant.setMicroseconds(115091000 / 1000);
+		let immDate = ToImmDate(instant);
+		let instant2 = ToInstant(immDate);
+		let immDate2 = ToImmDate(instant2);
+		expect(immDate.GetTime() === immDate2.GetTime()).toBe(true);
+	});
+
 	it("with no value or with only seconds or microseconds value", () => {
 		let instant = new helloworld.Instant();
 		expect(instant).not.toBeUndefined();
