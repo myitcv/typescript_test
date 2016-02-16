@@ -2,23 +2,23 @@
   "author": "",
   "description": "",
   "devDependencies": {
-    "gulp": "3.9.0",
+    "gulp": "3.9.1",
     "gulp-print": "2.0.1",
-    "gulp-shell": "0.5.1",
-    "gulp-watch": "^4.3.5",
+    "gulp-shell": "0.5.2",
+    "gulp-watch": "4.3.5",
     "http-server": "0.8.5",
     "jasmine-core": "2.4.1",
-    "jspm": "0.16.23",
+    "jspm": "0.16.28",
     "karma": "0.13.19",
     "karma-chrome-launcher": "0.2.2",
-    "karma-jasmine": "0.3.6",
+    "karma-jasmine": "0.3.7",
     "karma-jspm": "2.0.2",
     "karma-source-map-support": "1.1.0",
-    "systemjs": "0.19.16",
+    "systemjs": "0.19.21",
     "tsd": "0.6.5",
-    "tslint": "3.2.0-dev.2",
-    "typescript": "1.8.0-dev.20160116",
-    "typescript-formatter": "1.2.0"
+    "tslint": "3.4.0-dev.1",
+    "typescript": "1.9.0-dev.20160216",
+    "typescript-formatter": "2.0.0"
   },
   "jspm": {
     "dependencies": {

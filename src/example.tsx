@@ -21,9 +21,9 @@ class ComponentADef<T> extends React.Component<ComponentAProps<T>, ComponentASta
 
 	render(): JSX.Element {
 		return <div>
-					 <textarea id="log" readOnly={true} value={this.state.responses} style={{ width: "100%", height: "200px" }}></textarea><br />
-					 <input type="text" id="text" value={this.state.greeting} onChange={curry(this.onChangeGreeting, this) } /> <button onClick={curry(this.send, this) }>Send</button>
-			</div>;
+			<textarea id="log" readOnly={true} value={this.state.responses} style={{ width: "100%", height: "200px" }}></textarea><br />
+			<input type="text" id="text" value={this.state.greeting} onChange={curry(this.onChangeGreeting, this) } /> <button onClick={curry(this.send, this) }>Send</button>
+		</div>;
 	}
 
 	private send(): void {
