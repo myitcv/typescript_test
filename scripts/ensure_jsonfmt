@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-set -e
-shopt -s globstar
-set -o pipefail
-
-jsonlint -s 2 *.json ./src/**/*.json

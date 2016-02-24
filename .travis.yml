@@ -21,33 +21,16 @@ cache:
 
 before_install:
   - export CXX=g++-4.8
-  - export GOPATH=$HOME/gopath
-  - export PATH=$GOPATH/bin:$PATH
-  - export CHROME_BIN=/usr/bin/google-chrome-beta
-  - export PATH=$PWD/node_modules/.bin:$PATH
-  - export PROTOC_VERSION=3.0.0-beta-2
   - env
   - npm install -g npm@3.5.3
-  - node --version
-  - npm --version
-  - go version
-  - ls $CHROME_BIN
   - $CXX --version
-  - ./scripts/setup_go
 
 before_script:
-  - tsc --version
-  - tslint --version
-  - tsfmt --version
-  - jspm config registries.github.timeouts.lookup 60
-  - jspm config registries.github.timeouts.build 120
-  - jspm config registries.github.remote https://github.jspm.io
-  - jspm config registries.github.auth $JSPM_GITHUB_AUTH_TOKEN
-  - jspm config registries.github.maxRepoSize 0
-  - jspm config registries.github.handler jspm-github
-  - jspm install
-  - tsd install
-  - ./scripts/protobuf_install
+  - source ./scripts/common_env.sh
+  - source ./scripts/setup_env.sh
+  - ./scripts/setup_go.sh
+  - ./scripts/setup_typescript_test_packages.sh
+  - ./scripts/protobuf_install.sh
+  - ./scripts/dump_env.sh
 
-script: ./scripts/copy_typescript_dtss && ./scripts/ensure_clean && ./scripts/ensure_jsonfmt && ./scripts/tsfmt && ./scripts/tslint && ./scripts/build.sh && ./scripts/test_run.sh
-
+script: ./scripts/test_runner.sh

@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
-shopt -s globstar
-shopt -s extglob
-set -o pipefail
+source "${BASH_SOURCE%/*}/common.sh"
 
 ls src/**/*.{ts,tsx} | \
   grep -v src/lib.core.d.ts | \
