@@ -1,0 +1,12 @@
+{
+  "ambientDependencies": {
+    "d3": "github:modelogiq/DefinitelyTyped/d3/d3.d.ts#48f9a8a0bd9a9bf14c507dd9d4db159bd687c583",
+    "es6-shim": "github:modelogiq/DefinitelyTyped/es6-shim/es6-shim.d.ts#48f9a8a0bd9a9bf14c507dd9d4db159bd687c583",
+    "jasmine": "github:modelogiq/DefinitelyTyped/jasmine/jasmine.d.ts#48f9a8a0bd9a9bf14c507dd9d4db159bd687c583",
+    "misc": "file:src/misc.d.ts",
+    "react": "github:modelogiq/DefinitelyTyped/react/react.d.ts#48f9a8a0bd9a9bf14c507dd9d4db159bd687c583",
+    "react-dom": "github:modelogiq/DefinitelyTyped/react/react-dom.d.ts#48f9a8a0bd9a9bf14c507dd9d4db159bd687c583",
+    "whatwg-fetch": "github:modelogiq/DefinitelyTyped/whatwg-fetch/whatwg-fetch.d.ts#48f9a8a0bd9a9bf14c507dd9d4db159bd687c583"
+  },
+  "name": "typescript_test"
+}
