@@ -9,7 +9,7 @@ addons:
       - google-chrome
     packages:
       - g++-4.8
-      - google-chrome-beta
+      - google-chrome-stable
 
 cache:
   directories:
